@@ -1,6 +1,5 @@
 import pickle
 import uvicorn
-import json
 import pandas as pd
 from fastapi import FastAPI, status, HTTPException
 from model.perfil import PerfilSegurado
@@ -25,7 +24,7 @@ def fazerPrevisao(
                              detail=f"Ocorreu um erro ao executar a previsão de custo")    
                        
 def carregarModelo():
-     return pickle.load(open("modelo_regressaoLinearMultipla.pkl", "rb"))
+     return pickle.load(open("modelo_regressaoLinearMultipla.pkl", "rb")) 
 
 def montarPerfil(idade, genero, fumante, regiao):   
         '''
